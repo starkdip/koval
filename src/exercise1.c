@@ -1,11 +1,11 @@
-#include <stdlib.h>
 #include <stdio.h>
-int main(int argc, char** argv){
-    double sum = 0.0, num;
-    for (int i = 0; i < 10; i++) {
+#include <stdlib.h>
+int main(int argc, char** argv) {
+    double sum=0.0,num;
+    for (int i = 0; i < 10; i++){
         scanf("%lf", &num);
         sum+=num;
     }
-    printf("%.3f\n", sum / 10);
+    printf("%.3f\n", sum /10);
     return 0;
 }
