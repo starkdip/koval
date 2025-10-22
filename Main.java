@@ -8,28 +8,28 @@ public class Main{
             new Car(4, "Subaru", "WRX Impeza", 2007, "blue", 1600000,"U120PO56"),
             new Car(5, "Mitsubishi", "Lancer Evolution X", 2008, "black", 3700000, "S715VO77"),
         };//Welcome to Tokyo Full of sensation New generation Open your mind to reality Everyone, everywhere Is so beautiful, like a woman - desire Full of energy filled with energy! Go for yourself, and see what I mean! Boom Boom Japan, that's what I say And see what I mean Boom Boom Japan, happening night and day Night and day you will see and love it! Boom Boom Japan, that's what I say (c'mon) Go and see what I mean Boom Boom Japan, happening night and day Night and day you will see and love the land I wanna let you know It is a pleasure, finding my treasure Inside a place filled with harmony 
-        Car[] mazdaCars=getCarByBrend(cars, "Mazda");
+        Car[] mazdaCars=getCarByBrand(cars, "Mazda");
         System.out.println("Mazda cars found"+mazdaCars.length);
-        Car[] oldSubaruCars = getCarByBrendAndYearOperational(cars, "Subaru", 5);
+        Car[] oldSubaruCars = getCarByBrandAndYearOperational(cars, "Subaru", 5);
         System.out.println("Subaru cars older then 5 years:"+oldSubaruCars.length);
     }
-    public static Car[] getCarByBrend(Car[] cars, String brend){
+    public static Car[] getCarByBrand(Car[] cars, String brend){
         int count=0;
         for (Car car : cars){
-            if (car.getBrend().equalsIgnoreCase(brend)){
+            if (car.getBrand().equalsIgnoreCase(brend)){
                 count++;
             }
         }
         Car[] result = new Car[count];
         int index=0;
         for (Car car:cars){
-            if(car.getBrend().equalsIgnoreCase(brend)){
+            if(car.getBrand().equalsIgnoreCase(brend)){
                 result[index++]=car;
             }
         }
         return result;
     }
-    public static Car[] getCarByBrendAndYearOperational(Car[] cars, String brend, int years){
+    public static Car[] getCarByBrandAndYearOperational(Car[] cars, String brend, int years){
         int currentYear=Year.now().getValue();
         int count=0;
         for (Car car : cars){
