@@ -1,0 +1,6 @@
+#!/bin/bash
+directory="$1"
+days="$2"
+echo "Удаление файлов в директории '$directory' старше $days дней..."
+find "$directory" -type f -mtime "+$(($days-1))" -delete
+echo "Удаление завершено."
