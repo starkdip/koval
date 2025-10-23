@@ -13,28 +13,28 @@ public class Main{
         Car[] oldSubaruCars = getCarByBrandAndYearOperational(cars, "Subaru", 5);
         System.out.println("Subaru cars older then 5 years:"+oldSubaruCars.length);
     }
-    public static Car[] getCarByBrand(Car[] cars, String brend){
+    public static Car[] getCarByBrand(Car[] cars, String brand){
         int count=0;
         for (Car car : cars){
-            if (car.getBrand().equalsIgnoreCase(brend)){
+            if (car.getBrand().equalsIgnoreCase(brand)){
                 count++;
             }
         }
         Car[] result = new Car[count];
         int index=0;
         for (Car car:cars){
-            if(car.getBrand().equalsIgnoreCase(brend)){
+            if(car.getBrand().equalsIgnoreCase(brand)){
                 result[index++]=car;
             }
         }
         return result;
     }
-    public static Car[] getCarByBrandAndYearOperational(Car[] cars, String brend, int years){
+    public static Car[] getCarByBrandAndYearOperational(Car[] cars, String brand, int years){
         int currentYear=Year.now().getValue();
         int count=0;
         for (Car car : cars){
             int carAge=currentYear - car.getYear();
-            if (car.getBrand().equalsIgnoreCase(brend)&&carAge>years){
+            if (car.getBrand().equalsIgnoreCase(brand)&&carAge>years){
                 result[index++]=car;
             }
         }
