@@ -31,4 +31,10 @@ public class Cache<T>{
         }
         return items.getFirst();
     }
+    public T getLast(){
+        if(items.isEmpety()){
+            return null;
+        }
+        return items.getLast();
+    }
 }
