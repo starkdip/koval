@@ -14,4 +14,11 @@ public class Cache<T>{
             throw new IllegalArgumentException("Элемент не может быть null");
         }
         items.addLast(item);
+        if (items.size() > maxSize) {
+            items.removeFirst();
+        }
+    }
+    public boolean remove(T item) {
+        return items.remove(item);
+    }
 }
