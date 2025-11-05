@@ -7,5 +7,19 @@ public class Cache<T>{
         if (maxSize <=0){
             throw new IllegalArgumentException("фигня переделывай");
         }
+        this.maxSize=maxSize;
+        this.items=new LinkedList<>();
+    }
+    public void add(T item){
+        if (item==null){
+            throw new IllegalArgumentException("Не может быть Null");
+        }
+        items.addLast(item);
+        if (item.size()>maxSize){
+            items.removeFirst();
+        }
+    }
+    public boolean remove (T item){
+        return items.remove(item);
     }
 }
