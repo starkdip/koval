@@ -42,4 +42,39 @@ public class Cache<T>{
         }
         return items.get(index);
     }
+    public int size() {
+        return items.size();
+    }
+    public int getMaxSize() {
+        return maxSize;
+    }
+    public boolean isEmpty() {
+        return items.isEmpty();
+    }
+    @Override
+    public String toString() {
+        return "Cache{size=" + items.size() + ", maxSize=" + maxSize + ", items=" + items + "}";
+    }
+    public static void main(String[] args) {
+        System.out.println("Testing");
+        
+        Cache<Integer> cache = new Cache<>(3);
+        
+        System.out.println("\n1. add:");
+        cache.add(1);
+        cache.add(2);
+        cache.add(3);
+        System.out.println("After add 1,2,3: " + cache);
+        cache.add(4);
+        System.out.println("After add 4: " + cache);
+        System.out.println("\n2. Access methods:");
+        System.out.println("First el: " + cache.getFirst());
+        System.out.println("Last el: " + cache.getLast());
+        System.out.println("El index 1: " + cache.getItemByIndex(1));
+        System.out.println("\n3. Checking and deleting:");
+        System.out.println("Element 2 exists: " + cache.exists(2));
+        System.out.println("Deleting an el 2: " + cache.remove(2));
+        System.out.println("After deletion: " + cache);
+        System.out.println("\n Testing is completed");
+    }
 }
